@@ -58,5 +58,21 @@ graph TB;
  
 - **`2.`** CMD to Run Project --> **`npm run dev`**
 
+# # File Structure in React JS
+
+**(1) `node modules`** --> It has all the installed node packages.  
+
+**(2) `public`** -->  It contains static files that don't change. 
+
+**(3) `src`** --> Main folder for the React code.  
+- **`components`** --> Reusable parts of the UI, like buttons or headers.  
+- **`assets`** --> Images, fonts, and other static files.  
+- **`styles`** --> CSS or stylesheets.
+
+**(4) `package.json`** It contains information about this project like `name, version, dependencies` on other react packages.  
+
+**(5) `vite.config.js`** It contains vite config. 
+
+<img src="https://github.com/user-attachments/assets/03e0a358-8668-49b7-9736-fb8c9b3fda3d" alt="Screenshot 2024-10-09 000145" width="400" >
 
 
