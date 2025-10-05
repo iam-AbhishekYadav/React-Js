@@ -231,13 +231,53 @@ function Box(props) {
 export default Box;
 ```
 
+## Props.className
 
+- It  is passed from a parent component to a child component.
+- This prop is used to apply CSS classes to the elements rendered by the child component.
 
+### Example :-
 
+**`Parent Component`** – App.jsx
+``` jsx
+import Box from "./Box";
 
+function App() {
+  return (
+    <div>
+      <Box className="red-box" />
+      <Box className="blue-box" />
+    </div>
+  );
+}
 
+export default App;
+```
 
+**`Child Component`** – Box.jsx
+``` jsx
+function Box(props) {
+  return <div className={props.className}>This is a Box</div>;
+}
 
+export default Box;
+```
+
+**`CSS`** – App.css
+``` jsx
+.red-box {
+  background-color: red;
+  color: white;
+  padding: 10px;
+}
+
+.blue-box {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+}
+```
 
 
 
