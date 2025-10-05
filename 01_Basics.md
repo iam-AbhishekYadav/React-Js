@@ -75,4 +75,33 @@ graph TB;
 
 <img src="https://github.com/user-attachments/assets/03e0a358-8668-49b7-9736-fb8c9b3fda3d" alt="Screenshot 2024-10-09 000145" width="400" >
 
+## Components in React JS 
 
+- Components help us write reusable, modular and better organized code.
+- React application is a tree of components with App Component as the root bringing everything together.
+
+### Types of Components 
+
+**(i) `Class Components`**
+
+- Stateful: Can manage state.  
+- Lifecycle: Access to lifecycle methods.  
+- Verbose: More boilerplate code.  
+- Not Preferred anymore.
+
+**(i) `Functional Components`**
+
+- Initially stateless.  
+- Can use Hooks for state and effects.  
+- Simpler and more concise.  
+- More Popular.
+
+``` App.jsx
+function Component() {
+    return(
+        <p className="This component is in the component file.">Nirma</p>
+    )
+}
+
+export default Component;
+```
