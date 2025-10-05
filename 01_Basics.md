@@ -19,12 +19,14 @@ graph TB;
 - **npm** --> `Node Pakage Manager` (Allow us to install some libraries).
 - **npx** --> `Node Pakage Executer`
 
+<br />
+
 ## There are two ways to create project in React.
+
 
 **`(i)` 1st Way to create project in React.**
 
 --> It is Time Taking Proccess.  
-
 
 ### Steps to create Project
 
@@ -41,6 +43,8 @@ graph TB;
   - In bulid folder ReactJS code converted into JS code.
   - In production (client) bulid folder is served.
 
+ <br />
+ <br />
  
 **`(ii)` 2nd Way to create project in React.**
 
@@ -176,9 +180,56 @@ function Child(props) {
 export default Child;
 ```
 
+## Props.child
 
+- It is a special prop that allows components to receive and render content passed between their opening and closing tags.
+- This can be accessed in the other component using the props.children property.
 
+### Example :-
 
+#### How it works :-
+
+- Whatever you put inside <Box> ... </Box> in App.jsx gets passed as props.children to the Box component.
+- Then {props.children} displays that content inside the div.
+
+<br />
+<br />
+
+**`App.jsx`**  ---> Parent Component
+
+``` jsx
+import React from "react";
+import Box from "./Box";
+
+function App() {
+  return (
+    <div>
+      <Box>
+        <h1>Hello from inside Box!</h1>
+        <p>This text is passed using props.children</p>
+      </Box>
+    </div>
+  );
+}
+
+export default App;
+```
+
+**`Box.jsx`** ---> Child Component
+
+``` jsx
+import React from "react";
+
+function Box(props) {
+  return (
+    <div>
+      {props.children}
+    </div>
+  );
+}
+
+export default Box;
+```
 
 
 
