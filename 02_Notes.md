@@ -13,6 +13,7 @@
 
 ```jsx
 import React from "react";
+import Card from "./Card";
 
 const ProductItem = (props) => {
 
@@ -23,11 +24,6 @@ const ProductItem = (props) => {
 
 	return (
 		<Card className="product-item">
-			<ProductDate date={props.date} />
-
-			<div className='product-item__description'>
-				<h2>{props.title}</h2>
-			</div>
 {/* Event Listener */}
 			<button onClick={clickHandler}>Add to Cart</button>
 		</Card>
