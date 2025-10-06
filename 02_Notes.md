@@ -44,6 +44,10 @@ export default ProductItem;
   - **setState** : It is the function that is used to update the state.
   - **initialState** : It is the initial value of the state.
 
+> [!NOTE]
+> Per Compinent instance basics.  
+> Each component is running separately.
+
 ### Example :-
 
 - On clicking button UI will change .
@@ -79,6 +83,3 @@ const ProductItem = (props) => {
 
 export default ProductItem;
 ```
-> [!NOTE]
-> Per Compinent instance basics
-> Each component is running separately
