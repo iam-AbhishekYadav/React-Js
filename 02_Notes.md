@@ -11,7 +11,7 @@
  
 ### Example :-
 
-On clicking button in browser console message shows "Button Clicked"
+On clicking button in browser in console message shows "Button Clicked"
 
 ```jsx
 import React from "react";
