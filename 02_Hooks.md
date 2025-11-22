@@ -87,6 +87,7 @@ export default ProductItem;
 # # UseEffect Hook
 
 - It is used to handle side effects in functional components.
+- If you want to perform a task after the component is rendered, that task must be defined within the UseEffect.
 - Side Effects are :
   - Fetching data from an API.
   - Setting up event listeners or subscriptions.
