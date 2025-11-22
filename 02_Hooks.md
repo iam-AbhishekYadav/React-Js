@@ -121,22 +121,26 @@ function App() {
   const [name, setName] = useState("Abhishek");
 
   // Variation 1 --> Run on Every Render
+
   // useEffect(()=>{
   //   console.log("UI Rendering Done");
   // })
 
   // Vriation 2 --> Run on First Render
+
   // useEffect(() => {
   //   console.log("UI Rendering Done");
   // },[]);
 
   // Variation 3 --> First Render + Whever dependency changes
+
   // useEffect(() => {
   //   console.log("Change Observed");
   // }, [name]);
 
 
   // Variation 4 --> To handle unmounting of a component
+
   useEffect(() => {
     console.log("Listener Added");              // This line will run second              
 
