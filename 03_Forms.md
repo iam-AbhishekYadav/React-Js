@@ -34,7 +34,7 @@ const [formData, setFormData] = useState({
 
     return (
         <div className="App">
-            <form onSubmit={submitHandler}>
+            <form>
 
                 <input
                     type="text"
@@ -106,7 +106,7 @@ const [formData, setFormData] = useState({
 
     return (
         <div className="App">
-            <form onSubmit={submitHandler}>
+            <form>
 
                 <input
                     type="text"
@@ -135,9 +135,10 @@ const [formData, setFormData] = useState({
 export default App;
 ```
 
-# # Checkboxes, Radio Button and Select in Form
+# # Checkboxes and Radio Button in Form
 
-
+- In Checkboxes and Radio Button we use `checked` insted of value.
+- The value will be obtained by doing destructuring
 ``` js
 
 ``` js
@@ -149,32 +150,24 @@ function App() {
     const [formData, setFormData] = useState({
         isVisible: true,
         mode: "",
-        favCar: ""
     });
 
-console.log(formData);  // To see the form data in the console
+console.log(formData);        // To see the form data in the console
 
     function changeHandler(event) {
-        const { name, type, value, checked } = event.target;
+        const { name, type, value, checked } = event.target;        // Destructring
         setFormData((prevFormData) => {
             // console.log(prevFormData);
             return {
                 ...prevFormData,
-                [name]: type === 'checkbox' ? checked : value
+                [name]: type === 'checkbox' ? checked : value        // Handling checkbox separately
             }
         });
     }
 
-    function submitHandler(event) {
-        event.preventDefault();
-        // Do something with the form data
-        console.log("Form Submitted");
-        console.log(formData);
-    }
-
     return (
         <div className="App">
-            <form onSubmit={submitHandler}>
+            <form>
 
                 <input
                     type='checkbox'
@@ -198,7 +191,7 @@ console.log(formData);  // To see the form data in the console
                         name='mode'
                         value="Online Mode"
                         id='Online-Mode'
-                        checked={formData.mode === "Online Mode"}
+                        checked={formData.mode === "Online Mode"}        // Checking which radio is selected
                     ></input>
 
                     <label htmlFor='Online-mode'>Online Mode</label>
@@ -210,48 +203,12 @@ console.log(formData);  // To see the form data in the console
                         name='mode'
                         value="Offline Mode"
                         id='Offline-Mode'
-                        checked={formData.mode === "Offline Mode"}
+                        checked={formData.mode === "Offline Mode"}        // Checking which radio is selected
                     ></input>
 
                     <label htmlFor='Offline-mode'>Offline Mode</label>
 
                 </fieldset>
-
-                <br />
-                <br />
-
-                <label htmlFor='favCar'> Select your favorite car</label>
-
-                <select
-                    name='favCar'
-                    id='favCar'
-                    value={formData.favCar}
-                    onChange={changeHandler}
-                >
-                    <option value="">-- Choose your favorite car --</option>
-                    <option value="BMW">BMW</option>
-                    <option value="Audi">Audi</option>
-                    <option value="Mercedes">Mercedes</option>
-                    <option value="Tesla">Tesla</option>
-                </select>
-
-
-                <br /> */}
-
-
-                {/* First way to create submit button */}
-                {/* <input
-                    className="m-4 p-2 bg-blue-500 text-white rounded-lg"
-                    type="submit"
-                    value="Submit"
-                ></input> */}
-
-                {/* Second way to create submit button */}
-
-                <button
-                    className="m-4 p-2 outline-2 bg-gray-300 rounded-lg hover:bg-gray-400"
-                    type="submit"
-                >Submit</button>
 
             </form>
         </div>
@@ -263,7 +220,96 @@ export default App;
 
 
 
+# # Text Area, Dropdown/Select and Submit Button in Form
 
+
+
+``` js
+import React from 'react';
+import { useState } from 'react';
+
+
+function App() {
+
+const [formData, setFormData] = useState({
+        comments : "",
+        mode: "",
+    });
+
+    console.log(formData);  // To see the form data in the console
+
+
+    function changeHandler(event) {
+        setFormData((prevFormData) => {
+            // console.log(prevFormData);
+            return {
+                ...prevFormData,
+                [event.target.name]: event.target.value
+            }
+        });
+    }
+
+  function submitHandler(event){        // To prevent default behaviour of form submission
+    event.preventDefault();
+    // Do something with the form data
+    console.log("Form Submitted");
+    console.log(formData);
+  }
+
+  return (
+    <div className="App">
+      <form onSubmit={submitHandler}>
+
+        <textarea
+          placeholder='Enter your comments here ...'
+          onChange={changeHandler}
+          name='comments'
+          value={formData.comments}
+        ></textarea>
+
+
+        <br/>
+
+
+        <label htmlFor='favCar'> Select your favorite car</label>
+
+        <select
+          name='favCar'
+          id='favCar'
+          value={formData.favCar}
+          onChange={changeHandler}
+        >
+          <option value="">-- Choose your favorite car --</option>
+          <option value="BMW">BMW</option>
+          <option value="Audi">Audi</option>
+          <option value="Mercedes">Mercedes</option>
+          <option value="Tesla">Tesla</option>
+        </select>
+
+
+        <br/>
+
+
+        {/* First way to create submit button */}
+
+        {/* <input
+          type="submit"
+          value="Submit"
+        ></input> */}
+
+        {/* Second way to create submit button */}
+
+        <button 
+          type="submit"
+        >Submit</button>
+
+      </form>
+    </div>
+  );
+};
+
+export default App;
+```
 
 
 
