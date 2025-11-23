@@ -26,7 +26,7 @@ const [formData, setFormData] = useState({
         setFormData((prevFormData) => {
             // console.log(prevFormData);
             return {
-                ...prevFormData,
+                ...prevFormData,        // Spreading the previous form data
                 [event.target.name]: event.target.value
             }
         });
@@ -98,7 +98,7 @@ const [formData, setFormData] = useState({
         setFormData((prevFormData) => {
             // console.log(prevFormData);
             return {
-                ...prevFormData,
+                ...prevFormData,        // Spreading the previous form data
                 [event.target.name]: event.target.value
             }
         });
@@ -159,7 +159,7 @@ console.log(formData);        // To see the form data in the console
         setFormData((prevFormData) => {
             // console.log(prevFormData);
             return {
-                ...prevFormData,
+                ...prevFormData,        // Spreading the previous form data
                 [name]: type === 'checkbox' ? checked : value        // Handling checkbox separately
             }
         });
@@ -243,7 +243,7 @@ const [formData, setFormData] = useState({
         setFormData((prevFormData) => {
             // console.log(prevFormData);
             return {
-                ...prevFormData,
+                ...prevFormData,        // Spreading the previous form data
                 [event.target.name]: event.target.value
             }
         });
